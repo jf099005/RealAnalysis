@@ -59,3 +59,18 @@ For any interval $I=(a,b)$, $I$ will cotain an interval $I^n_k=(a^n_k,b^n_k)\sup
 - $|I-E|\ge|I^n_k-E| = \lim_{n\to\infty} |I_k^n-E_n|=(b_k-a_k)\Pi_{\ell=n}^\infty(1-|E^\ell|)=(b^n_k-a^n_k)\Pi_{\ell=n}^\infty (1-2^{-\ell})>0$
 
 ## EX3.
+Because the translation does not affect the measure, we assume $T$ is a linear transformation.
+
+from SVD, there exist $U,V\in\mathbb R^{n\times n}$ are orthonormal s.t. $T=U^T \Lambda V$, where $\Lambda=diag(\lambda_1,...,\lambda_n)$ is diagonal matrix
+
+any orthonormal matrix can be viewed as an conbinition of reflection and rotation, and these operations are measure-invariant.
+therefore, for any measurable set $E$ we have
+- $|VE|=|E|$
+- $|U(\Lambda VE)|=|\Lambda VE|$
+
+Let view $E'=VE$, because the transformation $\Lambda E'$ equivalent to stretch $E$ along each axis with correspond ratio $\lambda_k$, therefore $|\Lambda E'|=|\lambda_1\lambda_2...\lambda_n||E'|=|\det (\Lambda)||E'|=|\det (U^T \Lambda V)||E'|=|\det(T)| |E'|$
+
+$\implies |TE|=|U^T \Lambda VE|=|\Lambda E'|=|\det T||E'|=|\det T||E|$
+
+## EX4.
+
