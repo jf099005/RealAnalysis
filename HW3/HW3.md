@@ -74,3 +74,23 @@ $\implies |TE|=|U^T \Lambda VE|=|\Lambda E'|=|\det T||E'|=|\det T||E|$
 
 ## EX4.
 
+assume $\frac 1x>\pi$
+
+$\cos \frac 1x > \frac 12 \iff 2\pi k-\frac 13 \pi <\frac 1x < 2\pi k + \frac 13 \pi,k\in\mathbb N_+$
+$\iff x\in (\frac{3}{6\pi k+\pi}, \frac{3}{6\pi k-\pi})$ for $k\in\mathbb N_+$
+
+$\implies E=\cup_{k\in \mathbb N_+} (\frac 3{6\pi k+\pi},\frac 3{6\pi k-\pi})$, each interval is disjoint.
+
+$\frac 3{6\pi k-\pi}\le \delta \iff k\ge \frac 1{2\pi \delta}+\frac 1 6$
+
+$|E\cap I_\delta|=|\cup_{k\ge \frac 1{2\delta}+\frac \pi 6} (\frac 3{6\pi k+\pi}, \frac 3{6\pi k-\pi})|=\sum_{k\ge \frac 1{2\delta}+\frac \pi 6} (\frac 3{6\pi k-\pi}- \frac 3{6\pi k+\pi})=\frac 1{2\pi}\sum_{k\ge \frac 1{2\delta}+\frac 1 6} \frac 1{k-\frac 1 6}-\frac1{k+\frac 1 6}$
+
+
+
+$\frac 1{k-\frac 1 6}-\frac1{k+\frac 1 6}=\frac{\pi}{3(k^2-1/6^2)}$ is nonnegative and decreasing as long as $k>1$
+
+Let $L=\frac 1{2\delta}+\frac \pi 6$, then we have
+
+$\int_{L+1}^\infty \frac 1{x-\frac \pi 6}-\frac 1{x+\frac \pi 6}dx \le |E\cap I_\delta|\le \int_{L}^\infty \frac 1{x-\frac \pi 6}-\frac 1{x+\frac \pi 6}dx$
+
+$\implies \log \frac{L+1-\frac \pi 6}{L-\frac \pi 6}$
