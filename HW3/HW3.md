@@ -94,3 +94,12 @@ Let $L=\frac 1{2\delta}+\frac \pi 6$, then we have
 $\int_{L+1}^\infty \frac 1{x-\frac \pi 6}-\frac 1{x+\frac \pi 6}dx \le |E\cap I_\delta|\le \int_{L}^\infty \frac 1{x-\frac \pi 6}-\frac 1{x+\frac \pi 6}dx$
 
 $\implies \log \frac{L+1-\frac \pi 6}{L-\frac \pi 6}$
+
+## EX5.
+If not, then $|E\cap I| \le \alpha |I|\forall$ interval $I$.
+Let $\epsilon=(1-\alpha)|E|/2$,  choose $I^*=\{I_k^*\}_{k=1}^\infty$, each $I^*_k$ is open interval s.t. $E\subseteq \cup_{k=1}^\infty I^*_k$ and $\sum_{k=1}^\infty |I^*_k| \le |E|+\epsilon$
+
+by hypothesis, $|I_k^*\cap E|\le \alpha |I^*_k|\implies \frac 1{\alpha}|I^*_k\cap E|\le |I^*_k|$
+
+$\implies \frac 1{\alpha}\sum_{k=1}^\infty|I^*_k \cap E| = \frac 1\alpha |\cup_{k=1}^\infty (E\cap I_k^*)|= \frac 1{\alpha } |E|\le \sum_{k=1}^\infty|I^*_k|\le |E|+\frac \epsilon \alpha$
+$\implies \epsilon > (1-\alpha)|E|$, which make a contradiction.
