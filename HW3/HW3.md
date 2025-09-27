@@ -1,4 +1,5 @@
 ## EX1.
+First, $T$ is one-to-one mapping, hence the image of disjoint sets will also be disjoint.
 Let $I=[(k-1)2^{-n}, k2^{-n}]$ is an interval of measure $2^{-n}$, then $I$ can be written as 
 $I=\{\sum_{\ell=1}^{n-1} 2^{-\ell}a_\ell+\sum_{j=n}^\infty 2^{-j}b_j:b_j\in\{0,1\}\}$ for fixed $a_1,a_2,...,a_{n-1}$
 
@@ -16,7 +17,7 @@ $=\cup_{d_1,d_2,...,d_K} \{\sum_{j=1}^{K} d_j2^{-j} + \sum_{j=K+1}^\infty b_j2^{
 
 note that $\{\sum_{j=1}^{K} d_j2^{-j} + \sum_{j=K+1}^\infty b_j2^{-j} :b_j\in\{0,1\}\}$ is an interval of measure $2^{-K}$ for any fixed $d_1,d_2,...,d_K$, and is disjoint (except endpoint) for different $d_1,..,d_K$ (and thus the intersection of all sets are measure zero)
 
-besides, there's $2^{K-n}$ valid conbination of $d_1,d_2,...,d_K$, therefore the total measure is
+besides, there are $2^{K-n}$ valid conbination of $d_1,d_2,...,d_K$, therefore the total measure is
 $|T(I)|=|\cup_{d_1,...,d_K}\{\sum_{j=1}^{K} d_j2^{-j} + \sum_{j=K+1}^\infty b_j2^{-j} :b_j\in\{0,1\}\}|$
 $=2^{K-n}\times 2^{-K}=2^{-n}=|I|$
 
@@ -25,13 +26,11 @@ Therefore, the measure of the image of $T$ is invariant with its domain
 for any open sets $G$, it can be written as an disjoint union of countable many intervals of the form $[k2^{-n}, (k+1)2^{-n}],k,n\in\mathbb N$, therefore we can conclude the measure is samely invariant for any open sets $G$
 
 Besides, $T$ will map measure zero sets onto measure zero sets by following:
-- claim: $\forall \epsilon=2^{-M}>0,\exists N\in\mathbb N$ s.t. $T([k2^{-n},(k+1)2^{-n}])<\epsilon\forall n\ge N$
-choose $N=\max\{n:k_n\le M\}+1$ and we prove the claim
+- if $E$ is measure zero, then $\forall \epsilon>0$ we can always find open intervals $I=\{I_k\}$ cover $E$ and $\sum_{k=1}^\infty |I_k|<\epsilon$
+from above, $T(\cup_{k=1}^\infty I_k)\le \sum_{k=1}^\infty |T(I_k)|=\sum_{k=1}^\infty |I_k|<\epsilon$
 
-if $E$ is a measure zero set, then for any $M>0$, $E$ can be covered by a collection of intervals of type $[k2^{-n},(k+1)2^{-n}],k\in\mathbb N,n\ge M$
-
-Therefore, for any $\epsilon>0$, find $M$
-[unfinish]
+Therefore, $E$ is measurable $\implies E=G\cup Z$ where $G=\cup_{k=1}^\infty G_k \in G_\delta,|Z|=0$ and $G\cap Z=\emptyset$
+$\implies|TE|=|TG|+|TZ|=\lim_{n\to\infty}|\cup_{k=1}^n TG_k|+0=\lim_{n\to\infty} |\cup_{k=1}^n G_k|=|E|$
 
 ## EX2.
 By HW1, there exists an Cantor-type set of measure $1-\delta$ for all $\delta\in(0,1)$
@@ -59,6 +58,8 @@ For any interval $I=(a,b)$, $I$ will cotain an interval $I^n_k=(a^n_k,b^n_k)\sup
 - $|I-E|\ge|I^n_k-E| = \lim_{n\to\infty} |I_k^n-E_n|=(b_k-a_k)\Pi_{\ell=n}^\infty(1-|E^\ell|)=(b^n_k-a^n_k)\Pi_{\ell=n}^\infty (1-2^{-\ell})>0$
 
 ## EX3.
+(ref. https://www.math.ucdavis.edu/~hunter/measure_theory/measure_notes_ch2.pdf?utm_source=chatgpt.com)
+
 Because the translation does not affect the measure, we assume $T$ is a linear transformation.
 
 from SVD, there exist $U,V\in\mathbb R^{n\times n}$ are orthonormal s.t. $T=U^T \Lambda V$, where $\Lambda=diag(\lambda_1,...,\lambda_n)$ is diagonal matrix
@@ -77,13 +78,13 @@ $\implies |TE|=|U^T \Lambda VE|=|\Lambda E'|=|\det T||E'|=|\det T||E|$
 assume $\frac 1x>\pi$
 
 $\cos \frac 1x > \frac 12 \iff 2\pi k-\frac 13 \pi <\frac 1x < 2\pi k + \frac 13 \pi,k\in\mathbb N_+$
-$\iff x\in (\frac{3}{6\pi k+\pi}, \frac{3}{6\pi k-\pi})$ for $k\in\mathbb N_+$
+$\iff x\in (\frac{3}{6\pi k+\pi}, \frac{3}{6\pi k-\pi})$ for $k\in\mathbb N_+$, and the negative case is symmetric
 
-$\implies E=\cup_{k\in \mathbb N_+} (\frac 3{6\pi k+\pi},\frac 3{6\pi k-\pi})$, each interval is disjoint.
+$\implies E=\cup_{k\in \mathbb Z,k\neq 0} (\frac 3{6\pi k+\pi},\frac 3{6\pi k-\pi})$, each interval is disjoint.
 
 $\frac 3{6\pi k-\pi}\le \delta \iff k\ge \frac 1{2\pi \delta}+\frac 1 6$
 
-$|E\cap I_\delta|=|\cup_{k\ge \frac 1{2\delta}+\frac \pi 6} (\frac 3{6\pi k+\pi}, \frac 3{6\pi k-\pi})|=\sum_{k\ge \frac 1{2\delta}+\frac \pi 6} (\frac 3{6\pi k-\pi}- \frac 3{6\pi k+\pi})=\frac 1{2\pi}\sum_{k\ge \frac 1{2\delta}+\frac 1 6} \frac 1{k-\frac 1 6}-\frac1{k+\frac 1 6}$
+$|E\cap I_\delta|=2|\cup_{k\ge \frac 1{2\delta}+\frac \pi 6} (\frac 3{6\pi k+\pi}, \frac 3{6\pi k-\pi})|=2\sum_{k\ge \frac 1{2\delta}+\frac \pi 6} (\frac 3{6\pi k-\pi}- \frac 3{6\pi k+\pi})=\frac 1{\pi}\sum_{k\ge \frac 1{2\delta}+\frac 1 6} \frac 1{k-\frac 1 6}-\frac1{k+\frac 1 6}$
 
 
 
@@ -91,15 +92,6 @@ $\frac 1{k-\frac 1 6}-\frac1{k+\frac 1 6}=\frac{\pi}{3(k^2-1/6^2)}$ is nonnegati
 
 Let $L=\frac 1{2\delta}+\frac \pi 6$, then we have
 
-$\int_{L+1}^\infty \frac 1{x-\frac \pi 6}-\frac 1{x+\frac \pi 6}dx \le |E\cap I_\delta|\le \int_{L}^\infty \frac 1{x-\frac \pi 6}-\frac 1{x+\frac \pi 6}dx$
+$\frac 1{\pi}\int_{L+1}^\infty \frac 1{x-\frac \pi 6}-\frac 1{x+\frac \pi 6}dx \le |E\cap I_\delta|\le \frac 1{\pi}\int_{L}^\infty \frac 1{x-\frac \pi 6}-\frac 1{x+\frac \pi 6}dx$
 
 $\implies \log \frac{L+1-\frac \pi 6}{L-\frac \pi 6}$
-
-## EX5.
-If not, then $|E\cap I| \le \alpha |I|\forall$ interval $I$.
-Let $\epsilon=(1-\alpha)|E|/2$,  choose $I^*=\{I_k^*\}_{k=1}^\infty$, each $I^*_k$ is open interval s.t. $E\subseteq \cup_{k=1}^\infty I^*_k$ and $\sum_{k=1}^\infty |I^*_k| \le |E|+\epsilon$
-
-by hypothesis, $|I_k^*\cap E|\le \alpha |I^*_k|\implies \frac 1{\alpha}|I^*_k\cap E|\le |I^*_k|$
-
-$\implies \frac 1{\alpha}\sum_{k=1}^\infty|I^*_k \cap E| = \frac 1\alpha |\cup_{k=1}^\infty (E\cap I_k^*)|= \frac 1{\alpha } |E|\le \sum_{k=1}^\infty|I^*_k|\le |E|+\frac \epsilon \alpha$
-$\implies \epsilon > (1-\alpha)|E|$, which make a contradiction.
