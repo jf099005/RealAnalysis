@@ -64,3 +64,13 @@ $\implies M \int_{B_\epsilon+x} |(f(z)-f(x))|dz \to 0$ as $\epsilon\to 0$
 $\implies f\circledast \phi_\epsilon(x)\to f(x)$ as $\epsilon\to 0$
 
 ## EX5.
+Choose $A\subseteq E_1,B\subseteq E_2$ s.t. $|A|<\infty,|B|<\infty$,
+
+the claim hold if $\exists t$ s.t. $|A\cap B+t|>0$
+
+let $\mu(t)=|A\cap B+t|=\int_\mathbb R\chi_{A}(x)\chi_{B+t}(x)dx=\int_\mathbb R\chi_A(x)\chi_B(x-t)dx\ge 0$
+
+$\int\mathbb R \mu(t)dt=\int_\mathbb R \chi_Adx\times \int_\mathbb R \chi_B dx =|A|\times |B|>0\implies \mu(t)$ take positive at some points.
+
+$\implies \exists t$ s.t. $|A\cap B+t|>0\implies \{a-\hat b:a\in A,\hat b\in B+t\}$ contain an interval
+$\implies \{x_1-x_2:x_1\in E_1, x_2\in E_2\}\supseteq \{a-b:a\in A,b\in B\}=\{a-\hat b:a\in A,\hat b\in B+t\} + t$ contain an interval.
